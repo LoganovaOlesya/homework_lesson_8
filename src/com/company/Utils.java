@@ -1,3 +1,4 @@
+
 package com.company;
 
 import java.util.ArrayList;
@@ -6,18 +7,45 @@ import java.util.Random;
 
 import static com.company.Constants.ANSI_RESET;
 
+/**
+ *
+ */
+
 public class Utils {
+    /**
+     *
+     */
+    public Utils() { }
+
+    /**
+     *
+     */
     private static List<Object> objects = new ArrayList<>();
 
-    public static void print(String text) {
+    /**
+     *
+     */
+    static void print(final String text) {
         System.out.println("Here is your text: " + text);
     }
 
-    public static void print(String text, Color color) {
-        System.out.println("Here is your color text: " + color + text + ANSI_RESET);
+    /**
+     *
+     */
+    static void print(final String text, final Color color) {
+        System.out.println(color
+                + "Here is your color text: "
+                + text + ANSI_RESET);
     }
 
-    public static <T, R, E> Object randomObject(T firstObject, R secondObject, E thirdObject) {
+    /**
+     *
+     */
+    static <T, R, E> Object randomObject(
+            final T firstObject,
+            final R secondObject,
+            final E thirdObject
+    ) {
         Random random = new Random();
 
         objects.add(firstObject);

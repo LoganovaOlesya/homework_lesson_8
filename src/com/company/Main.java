@@ -1,3 +1,11 @@
+
+/**
+ *homework_lesson #8
+ * improvement with FindBugs and CheckStyle
+ * @version 1.2
+ * @author LoganovaOlesya
+ */
+
 package com.company;
 
 import com.company.model.Box;
@@ -9,13 +17,27 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+/**
+ *Main class.
+ * improvement with FindBugs and CheckStyle
+ * @version 1.2
+ * @author LoganovaOlesya
+ */
+public final class Main {
 
-    public static void main(String[] args) {
+    private Main() {
+        //NOP
+    }
 
-        Scanner saySomething = new Scanner(System.in);
+    /**
+     * @version 1.2
+     * @autor LoganovaOlesya
+     * @param args from command line
+     */
+    public static void main(final String[] args) {
+
+        Scanner saySomething = new Scanner(System.in, "UTF-8");
         String message;
-        String color_message;
 
         System.out.println("Hi! Write something");
         System.out.print("> ");
@@ -23,20 +45,21 @@ public class Main {
         message = saySomething.nextLine();
         Utils.print(message);
 
-        System.out.println("What is your favorite color?" +
-                        "\nBlack" +
-                        "\nRed" +
-                        "\nGreen" +
-                        "\nYellow" +
-                        "\nBlue" +
-                        "\nPurple" +
-                        "\nCyan" +
-                        "\nWhite");
+        System.out.println("What is your favorite color?"
+                + "\nBlack"
+                + "\nRed"
+                + "\nGreen"
+                + "\nYellow"
+                + "\nBlue"
+                + "\nPurple"
+                + "\nCyan"
+                + "\nWhite");
 
         System.out.print("> ");
-        color_message = saySomething.nextLine();
 
-        switch (message){
+        message = saySomething.nextLine();
+
+        switch (message) {
             case "Black":
                 Utils.print(message, Color.BLACK);
                 break;
@@ -62,11 +85,10 @@ public class Main {
                 Utils.print(message, Color.WHITE);
                 break;
             default:
-                System.out.println("I don't know what you talking about. Try again");
+                System.out.println(
+                "I don't know what you talking about. Try again");
                 break;
         }
-
-
         workWithBox();
 
         List<Parent> family = Arrays.asList(new Parent(), new ChildFine());
@@ -74,10 +96,11 @@ public class Main {
             familyMember.setName().setHand();
         }
 
-        System.out.println(Utils.randomObject(new Unicorn(), 1, "custom string"));
+        System.out.println(Utils.randomObject(
+        new Unicorn(), 1, "custom string"));
     }
 
-    static void workWithBox() {
+    private static void workWithBox() {
         Box<String> myBox = new Box<>();
         Box<Unicorn> boxWithUnicorn = new Box<>();
 
